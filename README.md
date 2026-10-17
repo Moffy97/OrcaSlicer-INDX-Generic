@@ -1,47 +1,60 @@
-# OrcaSlicer INDX Generic — base semplice
+# OrcaSlicer INDX Generic - basic manual setup
 
-Versione sperimentale per stampanti con Klipper/Kalico e macro Bondtech INDX gia installate. Il profilo generico richiede adattamento: non e una compatibilita universale gia verificata. Nessuna stampa fisica eseguita.
+Experimental OrcaSlicer build for Klipper/Kalico printers with the official Bondtech INDX macros already installed. This is a starting profile to adapt to your machine, not a universally validated printer configuration. Physical printing has not yet been validated by this project.
 
-## Setup guides / Guide di configurazione
+## Choose your setup guide / Scegli la lingua
 
-- **English:** [Read the setup guide](SETUP_GUIDE_EN.md) | [Download English PDF](https://github.com/Moffy97/OrcaSlicer-INDX-Generic/releases/download/v0.3.0-preview.20261017/Orca_INDX_Generic_Setup_Guide_EN.pdf)
-- **Italiano:** [Leggi la guida](GUIDA_CONFIGURAZIONE.md) | [Scarica PDF italiano](https://github.com/Moffy97/OrcaSlicer-INDX-Generic/releases/download/v0.3.0-preview.20261017/Guida_configurazione_Orca_INDX_Generic.pdf)
+| Language / Lingua | Read online | Download PDF |
+| --- | --- | --- |
+| English | [English setup guide](SETUP_GUIDE_EN.md) | [English PDF](https://github.com/Moffy97/OrcaSlicer-INDX-Generic/releases/download/v0.3.0-preview.20261017/Orca_INDX_Generic_Setup_Guide_EN.pdf) |
+| Italiano | [Guida in italiano](GUIDA_CONFIGURAZIONE.md) | [PDF italiano](https://github.com/Moffy97/OrcaSlicer-INDX-Generic/releases/download/v0.3.0-preview.20261017/Guida_configurazione_Orca_INDX_Generic.pdf) |
 
-Windows application, profiles and both language guides are available under **Assets** at the bottom of the [release page](https://github.com/Moffy97/OrcaSlicer-INDX-Generic/releases/tag/v0.3.0-preview.20261017). The application ZIP is unchanged; download the guides separately. Configure your printer dimensions, tool count, nozzle diameters and verified start sequence before printing.
+Both guides explain tool count, nozzle diameters, required printer macros, start/tool-change/end G-code and first slicing checks. Profile and launcher filenames remain as supplied, including their Italian names.
 
-## Download
+## Downloads
 
-- [OrcaSlicer INDX Generic — Windows x64 ZIP](https://github.com/Moffy97/OrcaSlicer-INDX-Generic/releases/download/v0.3.0-preview.20261017/OrcaSlicer-INDX-Generic-Windows-x64.zip)
-- [Soli profili generici](profili-indx-generici.zip)
-- [Guida semplice di configurazione](GUIDA_CONFIGURAZIONE.md) - [PDF scaricabile](https://github.com/Moffy97/OrcaSlicer-INDX-Generic/releases/download/v0.3.0-preview.20261017/Guida_configurazione_Orca_INDX_Generic.pdf)
-- [Tutte le release](https://github.com/Moffy97/OrcaSlicer-INDX-Generic/releases)
+Open the [release page](https://github.com/Moffy97/OrcaSlicer-INDX-Generic/releases/tag/v0.3.0-preview.20261017), scroll down and expand **Assets**.
 
-Estrarre completamente lo ZIP in una cartella scrivibile e aprire **Avvia-Orca-INDX.cmd**. La cartella dati e separata da quella di Orca gia installato; avvio con piatto vuoto. Nessun indirizzo stampante, filamento personale o calibrazione incluso.
+- [Windows x64 installer (.exe)](https://github.com/Moffy97/OrcaSlicer-INDX-Generic/releases/download/v0.3.0-preview.20261017/OrcaSlicer-INDX-Generic-0.3.0-preview-Setup-x64.exe): installs the application, initial profiles and both guides, with separate Start menu shortcuts and an uninstaller.
+- [Portable Windows x64 ZIP](https://github.com/Moffy97/OrcaSlicer-INDX-Generic/releases/download/v0.3.0-preview.20261017/OrcaSlicer-INDX-Generic-Windows-x64.zip): extract the entire folder to a writable location and run **Avvia-Orca-INDX.cmd**. Do not run it inside the ZIP.
+- [Profiles only](https://github.com/Moffy97/OrcaSlicer-INDX-Generic/releases/download/v0.3.0-preview.20261017/profili-indx-generici.zip): printer, process and PLA JSON files.
+- English and Italian PDF/text guides: choose your language above or download from Assets.
 
-## Cosa include
+**Source code** archives contain source material, not the ready-to-run Windows application. The original portable ZIP is unchanged; the installer includes the newer guides. See [Windows installation notes](WINDOWS_INSTALLER.md).
 
-Profilo macchina con quattro tool iniziali da 0,4 mm, processo manuale da 0,20 mm e PLA standard da calibrare. Numero di tool e diametri si modificano nelle impostazioni stampante native. Il cambio tool usa il comando Bondtech `CHANGE_TOOL TOOL={next_extruder} TEMP={new_filament_temp}` seguito da `M400`. L'output tratta feeder e riscaldatore INDX come un'unica unita fisica.
+## What is included
 
-**Nessuna sincronizzazione automatica, libreria touch personalizzata o Auto slicing optimization INDX. Nessun plugin KlipperScreen richiesto.** La base software e condivisa con il progetto SV08 Max, ma il marcatore `INDX_BASIC_PROFILE` disabilita quei servizi per questo profilo. Il marcatore `INDX_PRINT_START` compare solo in un commento per attivare l'output del feeder condiviso: non viene eseguita quella macro personalizzata.
+A printer profile with four initial 0.4 mm logical tools, a manual 0.20 mm process and a stock PLA profile to calibrate. Change tool count and nozzle diameters in the native printer settings. Tool changes use:
 
-## Prima di usare il profilo
+```gcode
+CHANGE_TOOL TOOL={next_extruder} TEMP={new_filament_temp}
+M400
+```
 
-1. Sostituire il volume **200 x 200 x 200 mm di esempio**, le aree raggiungibili da ogni tool e i limiti di velocita/accelerazione con quelli reali della propria stampante.
-2. Impostare numero dei tool, diametri, offset gestiti dal firmware e gli abbinamenti filamento/tool.
-3. Copiare nel G-code iniziale la sequenza di avvio, homing, pulizia e calibrazione gia verificata per la propria macchina. Il template non contiene una sequenza di avvio universale.
-4. Verificare le macro ufficiali Bondtech, i dock e gli offset. Il profilo non installa firmware, pinout o configurazioni di movimento.
-5. Impostare i filamenti reali e controllare anteprima e G-code prima del collaudo.
+The output treats the INDX feeder and heater as one physical unit. There is no automatic filament synchronization, custom touch library or custom INDX Auto slicing optimization. No custom KlipperScreen plugin is required.
 
-Per un'installazione Orca esistente: File > Importa > Importa configurazioni e selezionare i tre JSON estratti da `profili-indx-generici.zip`. Le impostazioni di partenza non sono calibrazioni.
+This build shares its software base with the SV08 Max project. The `INDX_BASIC_PROFILE` marker disables the extended services for this profile. `INDX_PRINT_START` appears only in a comment to enable shared-feeder output; it does not call that custom macro. Keep these markers when adapting the start G-code.
 
-## Verifica e sorgente
+## Before printing
 
-I profili standalone sono stati caricati dal programma e usati per generare il G-code di un cubo da 10 mm senza GUI, con le macro di cambio tool attese. La prova verifica il software, non il montaggio fisico.
+1. Replace the example **200 x 200 x 200 mm** volume, per-tool reachable areas and motion limits with your printer's real values.
+2. Set the actual tool count, nozzle diameters and filament-to-tool assignments. Apply physical offsets in the firmware; avoid applying them a second time in the slicer.
+3. Add your machine's verified start, homing, nozzle-cleaning and calibration sequence. The template does not contain a universal start sequence.
+4. Verify the official Bondtech macros, docks and offsets. This profile does not install firmware, pin assignments or motion configuration.
+5. Set your real filament parameters, then inspect Preview and exported G-code before commissioning a print.
 
-`UPSTREAM.json` identifica il sorgente Orca ufficiale esatto; `OrcaSlicer-INDX.patch` contiene tutte le modifiche corrispondenti al binario condiviso. `python prepare_source.py` ricostruisce il sorgente in una cartella nuova. Compilare con toolchain e dipendenze Orca ufficiali. Licenza AGPL-3.0, mantenuta nello ZIP.
+To import the profiles into an existing compatible build, extract `profili-indx-generici.zip` and use **File > Import > Import Configs** for its three JSON files. Default values are not calibration results.
 
-La versione completa per [SV08 Max e KlipperScreen](https://github.com/Moffy97/OrcaSlicer-INDX) resta in un repository separato. [Istruzioni ufficiali Bondtech INDX](https://github.com/BondtechAB/INDX#slicer-setup). Questo progetto non e una release ufficiale OrcaSlicer o Bondtech.
+## Installation and user data
 
-## File scaricabili negli Assets
+The installer runs for the current Windows user and uses a separate application directory from the SV08 Max edition and official OrcaSlicer. Its shortcut opens the included `dati` folder as its data directory. Initial profiles are seeded only when that directory has no OrcaSlicer configuration. Updates preserve existing settings, and uninstall leaves user data in place. Portable and installed copies do not automatically migrate or synchronize their settings.
 
-Apri la [release](https://github.com/Moffy97/OrcaSlicer-INDX-Generic/releases/tag/v0.3.0-preview.20261017), scorri in basso e apri **Assets**: trovi programma Windows, profili e guida PDF/testo. Gli archivi **Source code** contengono i sorgenti, non il programma pronto. La nuova guida si scarica separatamente dallo ZIP Windows gia pubblicato.
+The installer does not install firmware, connect to a printer, alter KlipperScreen, associate model file types or launch Orca automatically. No personal printer address, filament library or calibration is bundled. This community preview is not digitally signed.
+
+## Validation and source
+
+The standalone profiles were loaded by the application and used to generate G-code for a 10 mm cube with the expected tool-change commands. This validates software slicing, not physical hardware.
+
+`UPSTREAM.json` identifies the exact official Orca source revision. `OrcaSlicer-INDX.patch` contains the changes corresponding to the latest installer binary. The original portable ZIP has its matching source in the release tag. Run `python prepare_source.py` to reconstruct the source in a new directory, then build using Orca's official toolchain and dependencies. The AGPL-3.0 license and corresponding source material are included in the application packages. `windows-installer.iss` contains the installer recipe; see [build and installation notes](WINDOWS_INSTALLER.md).
+
+The full [SV08 Max and KlipperScreen edition](https://github.com/Moffy97/OrcaSlicer-INDX) remains in a separate repository. See the [official Bondtech INDX instructions](https://github.com/BondtechAB/INDX#slicer-setup). This is not an official OrcaSlicer or Bondtech release.

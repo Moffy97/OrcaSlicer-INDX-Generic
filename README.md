@@ -2,6 +2,13 @@
 
 Versione sperimentale per stampanti con Klipper/Kalico e macro Bondtech INDX gia installate. Il profilo generico richiede adattamento: non e una compatibilita universale gia verificata. Nessuna stampa fisica eseguita.
 
+## Setup guides / Guide di configurazione
+
+- **English:** [Read the setup guide](SETUP_GUIDE_EN.md) | [Download English PDF](https://github.com/Moffy97/OrcaSlicer-INDX-Generic/releases/download/v0.3.0-preview.20261017/Orca_INDX_Generic_Setup_Guide_EN.pdf)
+- **Italiano:** [Leggi la guida](GUIDA_CONFIGURAZIONE.md) | [Scarica PDF italiano](https://github.com/Moffy97/OrcaSlicer-INDX-Generic/releases/download/v0.3.0-preview.20261017/Guida_configurazione_Orca_INDX_Generic.pdf)
+
+Windows application, profiles and both language guides are available under **Assets** at the bottom of the [release page](https://github.com/Moffy97/OrcaSlicer-INDX-Generic/releases/tag/v0.3.0-preview.20261017). The application ZIP is unchanged; download the guides separately. Configure your printer dimensions, tool count, nozzle diameters and verified start sequence before printing.
+
 ## Download
 
 - [OrcaSlicer INDX Generic — Windows x64 ZIP](https://github.com/Moffy97/OrcaSlicer-INDX-Generic/releases/download/v0.3.0-preview.20261017/OrcaSlicer-INDX-Generic-Windows-x64.zip)

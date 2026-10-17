@@ -6,6 +6,7 @@ Versione sperimentale per stampanti con Klipper/Kalico e macro Bondtech INDX gia
 
 - [OrcaSlicer INDX Generic — Windows x64 ZIP](https://github.com/Moffy97/OrcaSlicer-INDX-Generic/releases/download/v0.3.0-preview.20261017/OrcaSlicer-INDX-Generic-Windows-x64.zip)
 - [Soli profili generici](profili-indx-generici.zip)
+- [Guida semplice di configurazione](GUIDA_CONFIGURAZIONE.md) - [PDF scaricabile](https://github.com/Moffy97/OrcaSlicer-INDX-Generic/releases/download/v0.3.0-preview.20261017/Guida_configurazione_Orca_INDX_Generic.pdf)
 - [Tutte le release](https://github.com/Moffy97/OrcaSlicer-INDX-Generic/releases)
 
 Estrarre completamente lo ZIP in una cartella scrivibile e aprire **Avvia-Orca-INDX.cmd**. La cartella dati e separata da quella di Orca gia installato; avvio con piatto vuoto. Nessun indirizzo stampante, filamento personale o calibrazione incluso.
@@ -33,3 +34,7 @@ I profili standalone sono stati caricati dal programma e usati per generare il G
 `UPSTREAM.json` identifica il sorgente Orca ufficiale esatto; `OrcaSlicer-INDX.patch` contiene tutte le modifiche corrispondenti al binario condiviso. `python prepare_source.py` ricostruisce il sorgente in una cartella nuova. Compilare con toolchain e dipendenze Orca ufficiali. Licenza AGPL-3.0, mantenuta nello ZIP.
 
 La versione completa per [SV08 Max e KlipperScreen](https://github.com/Moffy97/OrcaSlicer-INDX) resta in un repository separato. [Istruzioni ufficiali Bondtech INDX](https://github.com/BondtechAB/INDX#slicer-setup). Questo progetto non e una release ufficiale OrcaSlicer o Bondtech.
+
+## File scaricabili negli Assets
+
+Apri la [release](https://github.com/Moffy97/OrcaSlicer-INDX-Generic/releases/tag/v0.3.0-preview.20261017), scorri in basso e apri **Assets**: trovi programma Windows, profili e guida PDF/testo. Gli archivi **Source code** contengono i sorgenti, non il programma pronto. La nuova guida si scarica separatamente dallo ZIP Windows gia pubblicato.

@@ -10,8 +10,8 @@
 [Setup]
 AppId=OrcaSlicerINDXGenericPreview
 AppName=OrcaSlicer INDX Generic
-AppVersion=0.3.0-preview
-AppVerName=OrcaSlicer INDX Generic 0.3.0 preview
+AppVersion=0.3.1-preview
+AppVerName=OrcaSlicer INDX Generic 0.3.1 preview
 AppPublisher=OrcaSlicer INDX community project
 AppPublisherURL=https://github.com/Moffy97/OrcaSlicer-INDX-Generic
 AppSupportURL=https://github.com/Moffy97/OrcaSlicer-INDX-Generic/issues
@@ -24,7 +24,7 @@ ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
 MinVersion=10.0
 OutputDir={#OutputRoot}
-OutputBaseFilename=OrcaSlicer-INDX-Generic-0.3.0-preview-Setup-x64
+OutputBaseFilename=OrcaSlicer-INDX-Generic-0.3.1-preview-Setup-x64
 Compression=lzma2/fast
 SolidCompression=yes
 LZMANumBlockThreads=2
@@ -44,6 +44,7 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Source: "{#AppSource}\*"; DestDir: "{app}\app"; Excludes: "*.pdb,*.log,__pycache__\*,.git\*,logs\*"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#PackageSource}\dati\*"; DestDir: "{app}\dati"; Flags: onlyifdoesntexist uninsneveruninstall recursesubdirs createallsubdirs; Check: SeedInitialData
 Source: "{#PackageSource}\Avvia-Orca-INDX.cmd"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#PackageSource}\CHANGELOG_0.3.1.md"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#PackageSource}\GUIDA_CONFIGURAZIONE.md"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#PackageSource}\Guida_configurazione_Orca_INDX_Generic.pdf"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#PackageSource}\LICENSE"; DestDir: "{app}"; Flags: ignoreversion
@@ -51,6 +52,9 @@ Source: "{#PackageSource}\Orca_INDX_Generic_Setup_Guide_EN.pdf"; DestDir: "{app}
 Source: "{#PackageSource}\OrcaSlicer-INDX.patch"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#PackageSource}\prepare_source.py"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#PackageSource}\profili\*"; DestDir: "{app}\profili"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "{#PackageSource}\profili-indx-generici.zip"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#PackageSource}\profili-ugello-layer.json"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#PackageSource}\profili-ugello-layer.zip"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#PackageSource}\README.md"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#PackageSource}\SETUP_GUIDE_EN.md"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#PackageSource}\UPSTREAM.json"; DestDir: "{app}"; Flags: ignoreversion

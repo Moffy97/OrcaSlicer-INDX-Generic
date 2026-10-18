@@ -104,7 +104,7 @@ Il programma e stato verificato con slicing software; la compatibilita fisica de
 Scarica dalla sezione Assets: programma Windows completo; profili separati; questa guida PDF; versione testo della guida; file di verifica delle guide. Lo ZIP programma pubblicato precedentemente resta invariato: questa guida aggiornata si scarica separatamente.
 
 Progetto: https://github.com/Moffy97/OrcaSlicer-INDX-Generic
-Release: https://github.com/Moffy97/OrcaSlicer-INDX-Generic/releases/tag/v0.3.0-preview.20261017
+Release: https://github.com/Moffy97/OrcaSlicer-INDX-Generic/releases/tag/v0.3.1-preview.20261018
 
 Fonti ufficiali consultate il 17 ottobre 2026: Bondtech INDX, sezioni Firmware Configuration e Slicer Setup; file macros/indx.cfg e macros/indx-tc-macros.cfg. Le macro ufficiali evolvono: segui sempre la documentazione che corrisponde alla tua installazione.
 

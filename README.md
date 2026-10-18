@@ -55,7 +55,7 @@ The installer does not install firmware, connect to a printer, alter KlipperScre
 
 The standalone profiles were loaded by the application and used to generate G-code for a 10 mm cube with the expected tool-change commands. This validates software slicing, not physical hardware.
 
-`UPSTREAM.json` identifies the exact official Orca source revision. `OrcaSlicer-INDX.patch` contains the changes corresponding to the latest installer binary. The original portable ZIP has its matching source in the release tag. Run `python prepare_source.py` to reconstruct the source in a new directory, then build using Orca's official toolchain and dependencies. The AGPL-3.0 license and corresponding source material are included in the application packages. `windows-installer.iss` contains the installer recipe; see [build and installation notes](WINDOWS_INSTALLER.md).
+`UPSTREAM.json` identifies the exact official Orca source revision. `OrcaSlicer-INDX.patch` contains the changes corresponding to both the 0.3.1 installer and portable ZIP. Earlier binaries retain their source in their own release tags. Run `python prepare_source.py` to reconstruct the source in a new directory, then build using Orca's official toolchain and dependencies. The AGPL-3.0 license and corresponding source material are included in the application packages. `windows-installer.iss` contains the installer recipe; see [build and installation notes](WINDOWS_INSTALLER.md).
 
 The full [SV08 Max and KlipperScreen edition](https://github.com/Moffy97/OrcaSlicer-INDX) remains in a separate repository. See the [official Bondtech INDX instructions](https://github.com/BondtechAB/INDX#slicer-setup). This is not an official OrcaSlicer or Bondtech release.
 
@@ -71,4 +71,4 @@ The separate [nozzle/layer package](profili-ugello-layer.zip) contains 40 manual
 | 0.60 | 0.16, 0.20, 0.24, 0.28, 0.30, 0.32, 0.36, 0.40, 0.42 |
 | 0.80 | 0.20, 0.24, 0.28, 0.30, 0.32, 0.36, 0.40, 0.42, 0.48, 0.56 |
 
-These are conservative starting profiles, capped at 70% of nozzle diameter. The 0.25 family uses a 0.12 mm first layer; 0.05 mm layers need physical validation on the target printer. Generic 0.20 mm presets require an actual compatible 0.20 mm nozzle; they do not imply Bondtech offers that INDX tool. Existing installers remain unchanged; import this optional package into an installed copy.
+These are conservative starting process presets. The engine supports an explicit 0.64 mm software ceiling for a 0.8 mm nozzle; the listed manual process presets remain as supplied. The 0.25 family uses a 0.12 mm first layer; 0.05 mm layers need physical validation on the target printer. Generic 0.20 mm presets require an actual compatible 0.20 mm nozzle; they do not imply Bondtech offers that INDX tool. Import this optional package into an existing copy if those presets are not already installed.

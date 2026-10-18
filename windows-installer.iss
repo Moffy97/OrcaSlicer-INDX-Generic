@@ -57,6 +57,7 @@ Source: "{#PackageSource}\profili-ugello-layer.json"; DestDir: "{app}"; Flags: i
 Source: "{#PackageSource}\profili-ugello-layer.zip"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#PackageSource}\README.md"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#PackageSource}\SETUP_GUIDE_EN.md"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#PackageSource}\SHA256SUMS"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#PackageSource}\UPSTREAM.json"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#PackageSource}\VERSION.json"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#PackageSource}\windows-installer.iss"; DestDir: "{app}"; Flags: ignoreversion
